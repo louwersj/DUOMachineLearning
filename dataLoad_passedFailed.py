@@ -25,12 +25,25 @@ __email__ = "louwersj@gmail.com"
 
 import pandas as pd
 import cx_Oracle as cxo
+import os
 
 # change the below values when needed.
 sourceFileName = "./cleanData/passed_failed_combined.csv"
-conn_str = u'account/password@host:1521/server'
-#conn = cxo.connect(conn_str)
 
+oracleWalletLocation = '/Users/louwersj/Downloads/Wallet_DB201909171427'
+oracleTnsName = 'db201909171427_medium'
+oracleUsername = 'admin'
+oraclePassword = 'xxxxx'
+
+# set the OS environment variable TNS_ADMIN to the location of the (unpacked) Oracle Wallet.
+os.environ['TNS_ADMIN'] = oracleWalletLocation
+
+# Define a connection to the Oracle ADW
+connection = cxo.connect(oracleUsername, oraclePassword, oracleTnsName)
+
+cursor = connection.cursor()
+rs = cursor.execute("select 'Hello for ADB' from dual")
+print (rs.fetchall())
 
 data = pd.read_csv(sourceFileName)
 
