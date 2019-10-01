@@ -17,6 +17,9 @@ __email__ = "louwersj@gmail.com"
     specific python script)
 '''
 
+
+## WARNING -- Currently in development -- DO NOT USE
+
 import pandas as pd
 import cx_Oracle as cxo
 
