@@ -26,7 +26,7 @@ import cx_Oracle as cxo
 # change the below values when needed.
 sourceFileName = "./cleanData/passed_failed_combined.csv"
 conn_str = u'account/password@host:1521/server'
-conn = cxo.connect(conn_str)
+#conn = cxo.connect(conn_str)
 
 
 data = pd.read_csv(sourceFileName)

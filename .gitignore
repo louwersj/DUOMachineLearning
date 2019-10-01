@@ -128,3 +128,4 @@ dmypy.json
 
 .idea
 idea/
+./cleanData/passed_failed_combined.csv

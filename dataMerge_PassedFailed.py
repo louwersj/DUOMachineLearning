@@ -28,8 +28,8 @@ extension = 'csv'
 all_filenames = [i for i in glob.glob('passed_failed_*.{}'.format(extension))]
 
 #combine all files in the list
-combined_csv = pd.concat([pd.read_csv(f, delimiter=";") for f in all_filenames ])
+combined_csv = pd.concat([pd.read_csv(f, delimiter=";", encoding="ISO-8859-1") for f in all_filenames ])
 #export to csv
 combined_csv.to_csv( "passed_failed_combined.csv", index=False)
 
-print "done"
+print ("done")
