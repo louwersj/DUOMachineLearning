@@ -10,11 +10,14 @@ __email__ = "louwersj@gmail.com"
     Warehouse by leveraging the .to_sql functionality from Pandas. 
     
     DO NOTE:
-    The data, as it will be loaded is not normalized at this moment. Main reason for this is that it is not known what 
-    role the data will play for the user. In cases where the user wants to experiment with a flat (none normalized) data
-    table this load solution can be used in isolation. In case the data needs to be loaded / transformed into a more 
-    normalized data model there is a need to for a normalize SQL script which can do so. (this is not part of this 
-    specific python script)
+    -   The data, as it will be loaded is not normalized at this moment. Main reason for this is that it is not known what 
+        role the data will play for the user. In cases where the user wants to experiment with a flat (none normalized) data
+        table this load solution can be used in isolation. In case the data needs to be loaded / transformed into a more 
+        normalized data model there is a need to for a normalize SQL script which can do so. (this is not part of this 
+        specific python script)
+    -   The use of cx_oracle requires you to ensure you have the right Oracle client loaded on your machine
+    -   When using cx_oracle on a mac, do NOT use the Python bundled version that ships with MacOS as it contains a 
+        a number of bugs and sub-optimal settings. Do use homebrew to install a true Python3 version instead
 '''
 
 
